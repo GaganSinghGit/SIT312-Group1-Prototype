@@ -49,3 +49,12 @@ class Taps(db.Model):
     tag_id = db.Column(db.String(length=12), nullable=False)
     time = db.Column(db.DateTime, nullable=False, unique=True)
     user_id = db.Column(db.String(length=12), nullable=False)
+
+
+class Customers(db.Model):
+    id = db.Column(db.Integer(), primary_key=True)
+    customer_id = db.Column(db.String(length=12), nullable=False)
+    name = db.Column(db.String(length=30), nullable = False)
+    phone_num = db.Column(db.Integer, nullable=False)
+    covid_status = db.Column(db.String(length=12), nullable=False)
+

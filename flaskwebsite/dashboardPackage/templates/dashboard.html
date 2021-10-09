@@ -15,15 +15,15 @@ Dashboard Page
             <tr>
                <!-- Your Columns HERE -->
                <th scope="col">ID</th>
-               <th scope="col">code</th>
                <th scope="col">time</th>
+               <th scope="col">code</th>
                
             </tr>
          </thead>
          <tbody>
             <!-- Your rows inside the table HERE: -->
             {% for tap in taps %}
-            <!--{% include 'includes/items_modals.html' %}-->
+            
             <tr>
                <td>{{ tap.tag_id }}</td>
                <td>{{ tap.time }}</td>
