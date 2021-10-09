@@ -1,6 +1,6 @@
 from dashboardPackage import app
 from flask import render_template, redirect, url_for, flash
-from dashboardPackage.models import Item, User
+from dashboardPackage.models import Item, User, Taps
 from dashboardPackage.forms import RegisterForm, LoginForm
 from dashboardPackage import db
 from flask_login import login_user, logout_user, login_required
@@ -14,8 +14,8 @@ def home_page():
 @app.route("/dashboard")
 @login_required
 def dashboard_page():
-    items = Item.query.all()
-    return render_template('dashboard.html', items=items)
+    taps = Taps.query.all()
+    return render_template('dashboard.html', taps=taps)
 
 @app.route('/register', methods=['GET','POST'])
 def register_page():
@@ -58,7 +58,3 @@ def logout_page():
     flash("You have been logged out", category='info')
     return redirect(url_for('home_page'))
 
-
-@app.route("/about/<username>")
-def about_page(username):
-    return f"<h1>about page of {username}</h1>"

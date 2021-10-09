@@ -15,25 +15,20 @@ Dashboard Page
             <tr>
                <!-- Your Columns HERE -->
                <th scope="col">ID</th>
-               <th scope="col">Name</th>
-               <th scope="col">barcode</th>
-               <th scope="col">Price</th>
-               <th scope="col">Options</th>
+               <th scope="col">code</th>
+               <th scope="col">time</th>
+               
             </tr>
          </thead>
          <tbody>
             <!-- Your rows inside the table HERE: -->
-            {% for item in items %}
-            {% include 'includes/items_modals.html' %}
+            {% for tap in taps %}
+            <!--{% include 'includes/items_modals.html' %}-->
             <tr>
-               <td>{{ item.id }}</td>
-               <td>{{ item.name }}</td>
-               <td>{{ item.barcode }}</td>
-               <td>${{ item.price }}</td>
-               <td>
-                  <button class="btn btn-outline btn-info" data-toggle="modal" data-target="#Modal-MoreInfo-{{ item.id }}">More Info</button>
-                  <button class="btn btn-outline btn-success" data-toggle="modal" data-target="#Modal-Purchase-{{ item.id }}">Purchase</button>
-               </td>
+               <td>{{ tap.tag_id }}</td>
+               <td>{{ tap.time }}</td>
+               <td>{{ tap.user_id }}</td>
+
             </tr>
             {%endfor%}
          </tbody>

@@ -8,7 +8,7 @@ pymysql.install_as_MySQLdb()
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://{user}:{password}@{server}/{database}'.format(user='', password='', server='', database='')
-app.config['SECRET_KEY'] = ''
+app.config['SECRET_KEY'] = '2392510167989ae56f41070a'
 db = SQLAlchemy(app)
 bcrypt = Bcrypt(app)
 login_manager = LoginManager(app)
