@@ -55,3 +55,9 @@ CREATE TABLE item (
 	UNIQUE (description), 
 	FOREIGN KEY(owner) REFERENCES user (id)
 );
+
+CREATE TABLE Tag (
+  Tag_ID_number varchar(50) DEFAULT NULL,
+  Time_recorded datetime DEFAULT NULL,
+  Information varchar(20) DEFAULT NULL
+);
